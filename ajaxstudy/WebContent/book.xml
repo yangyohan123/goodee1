@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book>
+		<title>줄리엣</title>
+		<author></author>
+		<price>10000</price>
+	</book>
+	<book>
+		<title>줄리엣</title>
+		<author></author>
+		<price>10000</price>
+	</book>
+	<book>
+		<title>줄리엣</title>
+		<author></author>
+		<price>10000</price>
+	</book>
+	<book>
+		<title>줄리엣</title>
+		<author></author>
+		<price>10000</price>
+	</book>
+
+
+</books>

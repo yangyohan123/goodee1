@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title></title>
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript">
+	function doXml(){
+		sendRequest("book.xml", null, xmlcontrol, "GET")
+	}
+	function xmlcontrol(){
+		if(ajax.readyState == 4){
+			if(ajax.status == 200){
+				listAllBooks();
+			}
+			else{
+				alert("서버오류 :" + ajax.status);
+			}
+		}
+		
+	}
+	function listAllBooks(){
+		var book = 
+		
+		
+	}
+</script>
+</head>
+<body>
+<input type="button" value="xml연습하기" onclick="doXml()">
+<div id="result"></div>
+</body>
+</html>

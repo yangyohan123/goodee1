@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Table 태그 : 표그리기</title>
+</head>
+<body>
+<!--  
+
+border: 테두리의 크기
+style=" border-collapse: collapse" : 테두리와 테두리 사이의 공간을 없앰.
+ -->
+<table border="1" style="border-collapse: collapse">
+<!-- 
+<tr> 레코드를 의미하며.
+<th> 속성자체를 헤더부분으로 인식 : 기본적으로 header에 맞게 글자를 굵게만듬.
+<td><th> : 데이터를 의미함.
+표의 맨위의 칸수가 2개이면 모두 열의 갯수는 2개이여야 한다.
+colspan="2" : 자리칸수(행)를 2칸을 차지함.
+rowspan="2" : 자리칸수 (열)를 2칸을 차지함.
+ -->
+<thead><tr><th>Header1</th><th>Header2</th></tr></thead>
+<tbody><tr><td>Data1</td><td rowspan="2">Data2</td></tr>
+<tr><td>Data3</td><td>Data4</td></tr></tbody>
+<tfoot><tr><td colspan="2">Foot1</td><td>Foot2</td></tr></tfoot>
+</table>
+
+</body>
+</html>

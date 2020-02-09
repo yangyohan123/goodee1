@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" 
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	var count = 0;
+	$(function(){
+	/*	$("div > h1").click(function(){
+		
+			$(this).html(function(index,html){
+				var i = $("div").length;
+				count++;
+				return html += "<h1>" + count + "&nbsp;- Header</h1> ";
+			})
+		})
+		
+	*/
+		$("h1").click(function(){
+			var len = $("h1").length;
+			var thtml = $(this).html();
+			$("wrap").append("<h1>" + len + "-" + thtml + "</h1>")
+			
+		})
+	})
+	
+</script>
+</head>
+<body>
+wrap div 태그 내부에 h1태그를 클릭할 때마다 h1 태그 추가하기
+<hr>
+	<div id="wrap">
+		<h1>Header</h1>
+	</div>
+<hr>
+</body>
+</html>

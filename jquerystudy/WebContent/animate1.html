@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		width : 50px; height:2px;
+		background-color : orange;
+		position : relative;
+	}
+</style>
+<script type="text/javascript" 
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(function(){
+			$("div").hover(function(){
+				$(this).animate({
+					left : 300
+				}, 'show')
+			},function(){
+				$(this).animate({
+					left : 0
+				}, 'show')
+			})
+		})
+		
+	})
+	
+</script>
+</head>
+<body>
+	<div></div><div></div>
+	<div></div><div></div>
+	<div></div><div></div>
+	<div></div><div></div>
+	<div></div><div></div>
+	<div></div><div></div>
+	<div></div><div></div>
+	<div></div><div></div>
+	<div></div><div></div>
+</body>
+</html>

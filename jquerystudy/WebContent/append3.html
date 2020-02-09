@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" 
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//setInterval : 0.5초마다 함수를 호출
+		//$("img").first() : 첫번째 이미지.
+		//appendTo("body") : body단에 제일 끝으로 출력
+		$("img").css("width",250);
+		setInterval(function(){
+			$("img").first().appendTo("body");
+		},500)
+	})
+</script>
+</head>
+<body>
+	<img src="img/Chrysonthemum.jpg"/>
+	<img src="img/Desert.jpg"/>
+	<img src="img/Hydrangeas.jpg" />
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>바구니 수 구하기</title>
+
+<link rel="styleshhet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">
+	input.num{text-align:right}
+</style>
+<script type="text/javascript">
+	function calc() {
+		acnt = document.f.apple.value;
+		cnt = 0;
+		if(acnt%document.f.cnt.value==0)document.f.basketcnt.value = parseInt(acnt / document.f.cnt.value);
+		else document.f.basketcnt.value = parseInt(acnt / document.f.cnt.value)+1;
+	}
+</script>
+</head>
+<body>
+	<form name="f">
+		<table class="w3-all-table">
+			<caption>바구니수 계산하기</caption>
+			<tr>
+				<th>바구니당 사과 갯수</th>
+				<td><select name="cnt">
+						<option value="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5개</option>
+						<option value="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10개</option>
+						<option value="15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15개</option>
+						<option value="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20</option>
+				</select></td>
+			</tr>
+			<tr>
+				<th>사과의 총갯수</th>
+				<td><input type="text" class="num" name="apple" class="w3-right-align"></td>
+			<tr>
+				<td colspan="2" align="right"><input type="button"
+					value="바구니수 계산하기" onclick="calc()"
+					style="width: 100%; text-aligh: center;"></td>
+			</tr>
+			<tr>
+				<th>필요한 바구니수</th>
+				<td><input type="text" class="num" name="basketcnt"
+					class="w3-display-right"></td>
+			</tr>
+
+
+		</table>
+	</form>
+</body>
+</html>

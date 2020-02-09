@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>window </title>
+</head>
+<body>
+<form name="f">
+	<!-- alert : 확인만가능. 리턴값이 없다. ex)등록되었습니다. -->
+	<input type="radio" name="dbox"
+	onclick="this.form.echo.value=alert('alert 메세지 창 호출')">
+	alert 메세지 창 호출<br>
+	<!-- confirm : 선택가능. 확인/취소 버튼 클릭
+				      확인 버튼 클릭 : true 리턴
+				      취소 버튼 클릭 : false 리턴-->
+	<input type="radio" name="dbox"
+	onclick="this.form.echo.value=confirm('confirm 메세지 창 호출')">
+	alert 메시지 창 호출<br>
+	<!-- prompt : 사용자의 입력값을 받을 수 있음.
+				    확인 버튼 클릭: 입력된 값을 리턴.
+				    취소 버튼 클릭: 빈문자열 리턴. -->
+	<input type="radio" name="dbox"
+	onclick="this.form.echo.value=prompt('prompt 메세지 창 호출')">
+	alert 메시지 창 호출<br>
+	<input type="text" name="echo">
+</form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>초를 시간으로 환산하기</title>
+<style>
+input{text-align:right;}
+</style>
+<script type="text/javascript">
+	function calcul(){
+	num = parseInt(f.num.value);
+	f.hour.value=parseInt(num/(3600));
+	num = num%(3600);
+	f.minute.value=parseInt(num/60);
+	num = num%(60);
+	f.second.value = num;
+	}
+	/*
+		나는 양영원....미련한 곰탱이다....
+	*/
+</script>
+</head>
+<body>
+<form  name="f" id="f1">
+초: <input type="text" name="num"> <input type="button" value="시분초로 환산" onclick="calcul()">
+<br><input type="text" name="hour">시 <input type="text" name="minute">분<input type="text" name="second">초 
+</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>select 박스에서 선택된 항목을 alert 창에 띄우기</title>
+<script type="text/javascript">
+	function nameprint(a){//form에 this때문에 무조건 변수는 s로 되어야 함.
+		//nameprint(a) 안에 있는 변수명을 다른 이름으로 해놨을경우에 s변수에 직접 documnet.f.s를 집어 넣음.
+		//s변수는 다른 변수명 써도 상관없음.
+		s = document.f.s
+		//data : prompt 메세지창에서 입력받은 내용 저장.
+		var data = prompt(s.value);
+		//data 값으로 select의 선택된 값을 변경
+		s.value = data;
+	}	
+</script>
+</head>
+<body>
+<form name="f">
+<!-- this : select name="s"를 가리킴. -->
+과일 : <select name="s" onchange="nameprint(this)">
+	<option>사과</option><option>감</option>
+	<option>배</option><option>딸기</option>
+	<option>박현준</option>
+</select>
+</form>
+</body>
+</html>

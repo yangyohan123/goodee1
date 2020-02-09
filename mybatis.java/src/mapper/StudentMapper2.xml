@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 동적쿼리는 인터페이스로 구현하기보단 xml로 구현하는것이 훨씬 좋다. -->
+<mapper namespace="student2">
+	<select id="select1" parameterType="map" resultType="Student">
+		select * from student
+		<where>
+			<if test="grade != null">
+				grade=#{grade}
+			</if>
+			<if test="studno != null">
+				studno = #{studno}
+			</if>
+			<if test="height != null">
+				height >= #{height}
+			</if>
+		</where>
+		
+	</select>
+	<select id="select2" parameterType="map" resultType="Student">
+		select * from student
+		<choose>
+			<when test="grade != null and heigth != null">
+				where grade=#{grade} and height >= #{height}
+			</when>
+			<when test="grade != null">
+				where grade = #{grade}
+			</when>
+			<when test="height != null">
+				where height >= #{height}
+			</when>
+		</choose>
+	</select>
+	<select id="select3" parameterType="map" resultType="Student">
+		select * from student
+		<trim prefix="where" prefixOverrides="AND || OR">
+			<if test="grade != null"> and grade = #{grade}</if>
+			<if test="height != null"> and height >= #{height}</if>
+			<if test="weight != null"> and weight >= #{weight}</if>
+		</trim>
+	</select>
+<!-- grade = 1, height =180
+		select * from student 
+		grade = #{grade} and heigth >= #{height}	 
+	 grade = 1, height = null
+	  	select * from student 
+		where grade = #{grade}
+	 grade = null, height = 180
+	  	select * from student 
+		where height >= 180
+	 grade = null, height = null
+	  	select * from student
+-->
+	<select id="select4" parameterType="map" resultType="Student">
+		select * from student
+		<if test="majors != null">
+			where ${column} in
+			<foreach collection="majors" item="m" separator=","
+				index="i" open="(" close=")">#{m}</foreach>
+		</if>
+	</select>
+	<!-- 
+		majors : 101, 201, 301
+		open : 처음시작 '('를 열음
+		separator : ','로 구분시킴
+		close : ')'로 닫음
+		select * from student where major1 in (101,201,301) 쿼리문 완성.
+		
+		collection : Map에서  List 객체의 key 이름.
+		itme : 한개의 요소값을 저장하는 변수이름.
+		separator: 요소들사이의 표시되는 문자지정.
+		index : 인덱스번호.
+		open : 처음 시작 될때 표시되는 문자 지정.
+		close : 마지막 될때 표시되는 문자 지정.
+	 -->
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+<!-- id 속성 : sql 구문을 구분하는 유일한 코드값. 중복되면 안됨.
+	 resultType 속성 : sql 구문의 결과값을 리턴 자료형
+		 Member 객체 리턴 => 컬럼의 이름과, set프로퍼티이름이 같은 경우 자동 저장됨.
+		  				    만약 db컬럼이름과 프로퍼티이름 다를 경우 <select>태그 안에
+		           		  select 구문에서 속성에 alias를 주면 됨.
+     parameterType 속성 : sql 구문에 전달되는 값의 자료형
+     		여러개의 파라미터 전달시는 map을 이용해야 한다.
+     		#{key} : 자료형의미+값, id = #{id}  => id='admin' 
+     							 num = #{num} => num=11
+     		${key} : 값의 치환           id ='${id}' => id=admin
+     				 			 name like '%${name}%'
+     				 			 name like '%test%'	
+ -->
+	<select id="count" resultType="int">
+		select count(*) from member
+	</select>
+	<select id="list" resultType="Member">
+		select * from member
+	</select>
+	<select id="selectone" resultType="Member">
+		select * from member
+	</select>
+	<select id="selectid" resultType="Member" parameterType="String">
+		select * from member where id = #{value}
+	</select>
+	<select id="selectname" resultType="Member" parameterType="String">
+		select * from member where name like '%${value}%'
+	</select>
+	<select id="selectidname" resultType="Member" parameterType="map">
+		select * from member where name = #{name} and id=#{id}
+	</select>
+</mapper>
